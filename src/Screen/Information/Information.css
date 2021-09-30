@@ -1,0 +1,29 @@
+.content-information {
+  margin-top: 10px;
+}
+
+.col-information-top {
+  background-color: white;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 1em 1em 0 0;
+  text-align: center;
+}
+.col-information-sub {
+  background-color: white;
+}
+
+.col-form-information-content {
+  margin-top: 16px;
+}
+
+.input-form-information {
+  border-radius: 1em;
+}
+.btn-form-information {
+  width: 100%;
+}
+
+.form-upload-information .ant-upload,
+.btn-upload-information {
+  width: 100%;
+}

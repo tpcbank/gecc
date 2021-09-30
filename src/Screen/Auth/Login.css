@@ -1,0 +1,45 @@
+.content-login {
+  height: 100vh;
+  /* overflow: scroll; */
+}
+.row-login {
+}
+.col-login {
+  margin: 240px;
+  text-align: center;
+  border: 1px solid red;
+  background-color: white;
+  border-radius: 1em;
+}
+/* start title text */
+.title-text {
+  margin-top: 16px;
+}
+/* end title text */
+
+/*  start input passport and password */
+.form-input-login .input-login-username,
+.form-input-login .input-login-password {
+  border-radius: 2vh;
+  height: 40px;
+}
+/* end input passport and password */
+
+/* start button  */
+.form-button-loginpage .btn-form-login,
+.form-button-loginpage .btn-form-login:hover {
+  width: 30%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 4vh;
+  /* height: 55px; */
+  padding: 0;
+  color: #ffffff;
+  background-color: #9b51e0;
+  border-color: #ecf0f3;
+  box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.25),
+    1.5px 1.5px 3px rgba(119, 104, 129, 0.3),
+    inset 3px 3px 4px rgba(255, 255, 255, 0.4);
+  /* box-shadow: 15px 15px 25px rgba(151, 167, 195, 0.5); */
+}
+/* end button */
