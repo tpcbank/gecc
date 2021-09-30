@@ -17,15 +17,15 @@ export class Navbar extends Component {
               <div className="logo" />
               <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
                 <Menu.Item key="1">
-                  <Link to="/" />
+                  <Link to="/dlt-api1" />
                   Home
                 </Menu.Item>
                 <Menu.Item key="2">
-                  <Link to="/report" />
+                  <Link to="/dlt-api1/report" />
                   Report
                 </Menu.Item>
                 <Menu.Item key="3">
-                  <Link to="/information" />
+                  <Link to="/dlt-api1/information" />
                   Information
                 </Menu.Item>
               </Menu>
@@ -33,13 +33,13 @@ export class Navbar extends Component {
             {/* <Content style={{ padding: "0 50px" }}> */}
             {/* <div className="site-layout-content"> */}
             <Switch>
-              <Route exact path="/">
+              <Route exact path="/dlt-api1">
                 <Scan />
               </Route>
-              <Route path="/report">
+              <Route path="/dlt-api1/report">
                 <Report />
               </Route>{" "}
-              <Route path="/information">
+              <Route path="/dlt-api1/information">
                 <Information />
               </Route>
             </Switch>
