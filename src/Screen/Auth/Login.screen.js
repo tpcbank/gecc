@@ -12,8 +12,10 @@ export class Login extends Component {
   }
   onLogin = () => {
     console.log("login");
+    this.props.callbackUsername(this.state.username);
   };
   render() {
+    console.log(this.props);
     return (
       <div className="content-login">
         <Row className="row-login" justify="center" align="top">
@@ -41,7 +43,7 @@ export class Login extends Component {
                       className="input-login-username"
                       onChange={(e) =>
                         this.setState({
-                          passport: e.target.value,
+                          username: e.target.value,
                         })
                       }
                       placeholder="Username"

@@ -235,8 +235,8 @@ export class Information extends Component {
                     <Col
                       className="col-form-information"
                       xs={{ span: 22, offset: 1 }}
-                      sm={{ span: 22, offset: 1 }}
-                      xl={{ span: 22, offset: 1 }}
+                      sm={{ span: 16, offset: 4 }}
+                      xl={{ span: 16, offset: 4 }}
                     >
                       <Button
                         type="primary"
