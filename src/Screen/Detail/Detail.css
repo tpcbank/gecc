@@ -1,0 +1,20 @@
+.col-detail-top {
+  background-color: white;
+  text-align: center;
+}
+
+.col-detail-content {
+  background-color: white;
+}
+
+.col-detail-sup {
+  /* border: 1px solid red; */
+  border-bottom: 1px solid #e4eaec;
+}
+.col-detail-title {
+  border-bottom: 1px solid #e4eaec;
+}
+
+.col-detail-QRcode {
+  text-align: center;
+}

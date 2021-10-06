@@ -1,0 +1,31 @@
+.img-scan {
+  width: 20%;
+}
+.Col-scan {
+  text-align: center;
+}
+.btn-show-scan {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+.photo-qrcode {
+  width: 100%;
+}
+.Col-scan {
+  margin-top: 16px;
+}
+.btn-show-scanstart,
+.btn-show-scanstart:hover,
+.btn-show-scanstart:focus {
+  background-color: green;
+  color: #fff;
+  border-radius: 1em;
+}
+.btn-show-scanstop,
+.btn-show-scanstop:hover,
+.btn-show-scanstop:focus {
+  background-color: red;
+  color: #fff;
+  border-radius: 1em;
+}

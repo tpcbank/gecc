@@ -1,0 +1,14 @@
+.content-report {
+  height: 70vh;
+}
+
+.col-report,
+.col-report-bottom,
+.col-report-top {
+  background-color: #fff;
+  margin-top: 16px;
+}
+.col-report-printer {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}

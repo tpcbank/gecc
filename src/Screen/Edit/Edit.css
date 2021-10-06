@@ -1,0 +1,29 @@
+.content-edit {
+  margin-top: 10px;
+}
+
+.col-edit-top {
+  background-color: white;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 1em 1em 0 0;
+  text-align: center;
+}
+.col-edit-sub {
+  background-color: white;
+}
+
+.col-form-edit-content {
+  margin-top: 16px;
+}
+
+.input-form-edit {
+  border-radius: 1em;
+}
+.btn-form-edit {
+  width: 100%;
+}
+
+.form-upload-edit .ant-upload,
+.btn-upload-edit {
+  width: 100%;
+}

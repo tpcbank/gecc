@@ -1,0 +1,48 @@
+.col-print {
+  border: 1px solid black;
+  text-align: center;
+}
+.test {
+  width: 21cm;
+  min-height: 29.7cm;
+  padding: 1.5cm;
+  margin: 1cm auto;
+  border: 1px #d3d3d3 solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+}
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  header,
+  footer,
+  aside,
+  form,
+  … {
+    display: none;
+  }
+  body,
+  html {
+    width: 21cm !important;
+    height: 29.7cm !important;
+    margin: 0;
+  }
+  .col-print {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  .test {
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 1.5cm;
+    margin: 0cm !important;
+    border: 1px #d3d3d3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+  }
+}
