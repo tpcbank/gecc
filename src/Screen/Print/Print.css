@@ -1,6 +1,7 @@
 .col-print {
   border: 1px solid black;
   text-align: center;
+  margin-bottom: 16px;
 }
 .test {
   width: 21cm;

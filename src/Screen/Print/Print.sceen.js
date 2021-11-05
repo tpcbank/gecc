@@ -26,14 +26,14 @@ export class Print extends Component {
             // sm={{ span: 16, offset: 4 }}
             // xl={{ span: 16, offset: 4 }}
           >
-            <Row>
+            <Row className="row-cut-qrcode">
               {this.state.dataTable !== [] && this.state.dataTable !== undefined
                 ? this.state.dataTable.map(function (data, index) {
                     console.log(data);
                     return (
-                      <Col key={index} className="col-print">
-                        <QRCode value={data.name} />
-                        <h4>{data.name}</h4>
+                      <Col key={index} className="col-print" offset={1}>
+                        <QRCode value={data.lcp_id} />
+                        <h4>{data.lcp_id}</h4>
                       </Col>
                     );
                   })

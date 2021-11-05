@@ -1,5 +1,6 @@
-import { Row, Col, Form, Input, Button } from "antd";
+import { Row, Col, Form, Input, Button, message } from "antd";
 import React, { Component } from "react";
+import axios from "axios";
 import "./Login.css";
 
 export class Login extends Component {
@@ -10,12 +11,38 @@ export class Login extends Component {
       password: "",
     };
   }
-  onLogin = () => {
-    console.log("login");
-    this.props.callbackUsername(this.state.username);
-  };
+  onLogin() {
+    try {
+      const data = {
+        i: 5,
+        d01: this.state.username,
+        d02: this.state.password,
+      };
+      axios
+        .get(
+          "https://gecc.dlt.go.th/2021-09-01/licenseplate/lib/datareturn.php?",
+          {
+            params: data,
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log("asd", response.data);
+          if (response.data.length !== 0) {
+            this.props.callbackUsername(response.data[0].umg_user);
+          } else {
+            message.error(
+              "เกิดข้อผิดพลาดบางอย่าง โปรดตรวจสอบความถูกต้องของข้อมูลอีกครั้ง"
+            );
+          }
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
-    console.log(this.props);
     return (
       <div className="content-login">
         <Row className="row-login" justify="center" align="top">
@@ -35,7 +62,7 @@ export class Login extends Component {
                     rules={[
                       {
                         required: true,
-                        message: "Please input your username!",
+                        message: "กรุณาใส่ยูสเซอร์เนม",
                       },
                     ]}
                   >
@@ -56,7 +83,7 @@ export class Login extends Component {
                     rules={[
                       {
                         required: true,
-                        message: "Please input your password!",
+                        message: "กรุณาใส่รหัสผ่าน",
                       },
                     ]}
                   >

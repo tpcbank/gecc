@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Layout, Menu } from "antd";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Layout } from "antd";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { withRouter } from "react-router";
 import Report from "../../Screen/Report/Report.screen";
 import Scan from "../../Screen/Scan/Scan.screen";
 import Information from "../../Screen/Information/Information.screen";
@@ -8,49 +9,50 @@ import Product from "../../Screen/Product/Product.component";
 import Detail from "../../Screen/Detail/Detail.sceen";
 import Edit from "../../Screen/Edit/Edit.sceen";
 import Print from "../../Screen/Print/Print.sceen";
+import MenuComponent from "./Menu.component";
+import DetailScan from "../../Screen/Detail/DetailScan";
 
-const { Header, Footer } = Layout;
+const { Header, Content, Footer } = Layout;
 
 export class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { umg_user: this.props.umg_user };
+  }
   render() {
+    const HeaderWithRouter = withRouter(MenuComponent);
+
     return (
       <div>
         <Router>
           <Layout className="layout">
             <Header>
               <div className="logo" />
-              <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
-                <Menu.Item key="1">
-                  <Link to="/" />
-                  Home
-                </Menu.Item>
-                <Menu.Item key="2">
-                  <Link to="/report" />
-                  Report
-                </Menu.Item>
-                <Menu.Item key="3">
-                  <Link to="/information" />
-                  Information
-                </Menu.Item>
-                <Menu.Item key="4">
-                  <Link to="/product" />
-                  Product
-                </Menu.Item>
-              </Menu>
+              <HeaderWithRouter />
             </Header>
-
-            <Switch>
-              <Route exact path="/" component={Scan} />
-              <Route path="/report" component={Report} />
-              <Route path="/information" component={Information} />
-              <Route path="/product" component={Product} />
-              <Route path="/detail" component={Detail} />
-              <Route path="/edit" component={Edit} />
-              <Route path="/print" component={Print} />
-            </Switch>
+            <Content>
+              <Switch>
+                <Route exact path="/">
+                  <Scan umg_user={this.state.umg_user} />
+                </Route>
+                <Route path="/report">
+                  <Report umg_user={this.state.umg_user} />
+                </Route>
+                <Route path="/information">
+                  <Information umg_user={this.state.umg_user} />
+                </Route>
+                <Route path="/product">
+                  <Product umg_user={this.state.umg_user} />
+                </Route>
+                <Route path="/detail" component={Detail} />
+                <Route path="/detailScan" component={DetailScan} />
+                <Route path="/edit" component={Edit} />
+                <Route path="/print" component={Print} />
+              </Switch>
+            </Content>
 
             <Footer style={{ textAlign: "center" }}>
-              Ant Design ©2018 Created by Ant UED
+              Website .... ©2021 Created by Tabsoft
             </Footer>
           </Layout>
         </Router>

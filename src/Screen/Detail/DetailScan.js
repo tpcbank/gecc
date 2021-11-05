@@ -1,9 +1,10 @@
-import { Button, Col, Row } from "antd";
+import { Button, Col, Input, message, Row } from "antd";
 import React, { Component } from "react";
 import "./Detail.css";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-export class Detail extends Component {
+export class DetailScan extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,6 +15,7 @@ export class Detail extends Component {
       status: "",
       lcp_user_use: "",
       lcp_dt_use: "",
+      comment: "",
     };
   }
 
@@ -35,7 +37,7 @@ export class Detail extends Component {
           if (response.data.length !== 0) {
             if (response.data[0].lcp_status === "1") {
               this.setState({
-                status: "รอใช้งาน",
+                status: "รอใช่งาน",
               });
             } else if (response.data[0].lcp_status === "2") {
               this.setState({
@@ -60,6 +62,28 @@ export class Detail extends Component {
               lcp_dt_use: response.data[0].lcp_dt_use,
             });
           }
+        });
+    } catch (error) {}
+  }
+
+  onSave() {
+    try {
+      const data = { i: 8, d01: this.state.id, d02: this.state.comment };
+      axios
+        .get(
+          "https://gecc.dlt.go.th/2021-09-01/licenseplate/lib/datareturn.php?",
+          {
+            params: data,
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          if (response.data.status === "success") {
+            message.success("บันทึกข้อมูลเรียบร้อย");
+          }
+          console.log(response.data.status);
         });
     } catch (error) {}
   }
@@ -120,7 +144,7 @@ export class Detail extends Component {
                 sm={{ span: 16, offset: 4 }}
                 xl={{ span: 16, offset: 4 }}
               >
-                <h3>ใช้เมื่อ: {this.state.lcp_dt_use}</h3>
+                <h3>ใช่เมื่อ: {this.state.lcp_dt_use}</h3>
               </Col>
             </Row>
             <Row className="row-detail-data">
@@ -140,7 +164,7 @@ export class Detail extends Component {
                 sm={{ span: 16, offset: 4 }}
                 xl={{ span: 16, offset: 4 }}
               >
-                <h3>ผู้ใช้: {this.state.lcp_user_add}</h3>
+                <h3>ผู้ใช่: {this.state.lcp_user_add}</h3>
               </Col>
             </Row>
             <Row className="row-detail-data">
@@ -188,32 +212,37 @@ export class Detail extends Component {
             </Row>
 
             <Row className="row-detail-Qrcode">
-              {/* {this.state.data !== [] && this.state.data !== undefined ? (
-                <Col
-                  className="col-detail-QRcode"
-                  xs={{ span: 20, offset: 2 }}
-                  sm={{ span: 16, offset: 4 }}
-                  xl={{ span: 16, offset: 4 }}
-                >
-                  <QRCode value={this.state.data.name} />
-                  <h4>{this.state.data.address}</h4>
-                </Col>
-              ) : null} */}
+              <Col
+                className="col-detail-data-detailScane"
+                xs={{ span: 20, offset: 2 }}
+                sm={{ span: 16, offset: 4 }}
+                xl={{ span: 16, offset: 4 }}
+              >
+                <h3>หมายเหตุ</h3>
+                <Input
+                  className="input-form-detailScane"
+                  onChange={(e) =>
+                    this.setState({
+                      comment: e.target.value,
+                    })
+                  }
+                />
+              </Col>
             </Row>
-            {/* <Row className="row-detail-btn">
+            <Row className="row-detail-btn">
               <Col
                 className="col-detail-btn"
                 xs={{ span: 20, offset: 2 }}
                 sm={{ span: 8, offset: 8 }}
                 xl={{ span: 8, offset: 8 }}
               >
-                <Link to={{ pathname: "/edit", state: this.state.data }}>
-                <Button className="btn-detail" >
-                  <h4 className="text-btn-detail">แก้ไข</h4>
-                </Button>
+                <Link to="/">
+                  <Button className="btn-detail" onClick={() => this.onSave()}>
+                    <h4 className="text-btn-detail">บันทึก</h4>
+                  </Button>
                 </Link>
               </Col>
-            </Row> */}
+            </Row>
           </Col>
         </Row>
       </div>
@@ -221,4 +250,4 @@ export class Detail extends Component {
   }
 }
 
-export default Detail;
+export default DetailScan;

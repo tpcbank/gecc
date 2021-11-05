@@ -1,12 +1,98 @@
 .content-product {
-  height: 70vh;
+  margin: 16px 0;
+}
+.col-product-top {
+  background: linear-gradient(
+    180.09deg,
+    rgba(114, 28, 166, 0.322934),
+    rgba(203, 162, 255, 0) 68.14%
+  );
+  background-color: white;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 1em 1em 0 0;
+  padding: 16px 0;
+  text-align: center;
+}
+.text-product-top {
+  margin: 0;
 }
 
-.col-product {
+.col-product-sup {
   background-color: #fff;
-  margin-top: 16px;
 }
 .col-product-printer {
   margin-top: 16px;
   margin-bottom: 8px;
+}
+.btn-product-printer {
+  width: 100%;
+  border-radius: 1em;
+  border-color: #b983ff;
+}
+.text-btn-printer {
+  color: #b983ff;
+}
+
+.btn-product-printer:hover {
+  background-color: #b983ff;
+  border-color: white;
+}
+.text-btn-printer:hover {
+  color: white;
+}
+
+.search-product,
+.search-product:hover {
+  border-radius: 1em;
+  border-color: #b983ff;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner,
+.ant-checkbox-indeterminate .ant-checkbox-inner::after {
+  background-color: #b983ff;
+  border-color: #b983ff;
+}
+@media screen and (max-width: 480px) {
+  .table {
+    text-align: left;
+    border-top: 0px;
+    overflow-x: initial;
+  }
+  .table td,
+  .table th {
+    padding: 0px;
+    vertical-align: top;
+    border-top: 0px solid #dee2e6;
+  }
+
+  .ant-table-thead .ant-table-cell {
+    display: none;
+  }
+  .ant-table-tbody .ant-table-cell {
+    display: block;
+  }
+  tbody {
+    padding: 8px;
+  }
+  .ant-table-row {
+    border: 1px solid #dee2e6;
+  }
+  .ant-table-tbody .ant-table-cell:before {
+    content: attr(data-heading);
+    display: inline;
+    width: 50%;
+    color: black;
+    font-size: 1rem;
+    /* text-transform: uppercase; */
+    letter-spacing: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    /* margin-bottom: 50px; */
+  }
+  .zebra-highlight {
+    background: #ccc;
+  }
 }

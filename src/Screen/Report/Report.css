@@ -1,14 +1,106 @@
 .content-report {
-  height: 70vh;
+  margin-top: 16px;
 }
 
-.col-report,
-.col-report-bottom,
-.col-report-top {
+.col-report {
   background-color: #fff;
   margin-top: 16px;
+}
+
+.col-report-top {
+  background: linear-gradient(
+    180.09deg,
+    rgba(114, 28, 166, 0.322934),
+    rgba(203, 162, 255, 0) 68.14%
+  );
+  background-color: white;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 1em 1em 0 0;
+  padding: 16px 0;
+  text-align: center;
+}
+.report-top-text {
+  margin: 0;
+}
+.col-report-bottom {
+  background-color: #fff;
+  border-top: 1px solid #e4eaec;
+}
+.row-report-export {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 .col-report-printer {
   margin-top: 16px;
   margin-bottom: 8px;
+}
+.ant-table-pagination > *,
+.ant-table-pagination > *:focus,
+.ant-table-pagination > *:hover,
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link,
+.ant-pagination-prev .ant-pagination-item-link:hover,
+.ant-pagination-next .ant-pagination-item-link:hover {
+  border-color: #b983ff;
+}
+.ant-pagination-item-active a,
+.ant-pagination-item-active a:hover,
+.ant-pagination-item-active a:focus,
+.ant-pagination-item a:hover,
+.anticon:hover {
+  color: #b983ff;
+}
+
+.btn-export,
+.btn-export:hover {
+  width: 100%;
+  border-color: #b983ff !important;
+  border-radius: 1em;
+}
+.text-export:hover,
+.btn-export .CSV-export .text-export:hover {
+  color: #b983ff;
+}
+
+@media screen and (max-width: 480px) {
+  .table {
+    text-align: left;
+    border-top: 0px;
+    overflow-x: initial;
+  }
+  .table td,
+  .table th {
+    padding: 0px;
+    vertical-align: top;
+    border-top: 0px solid #dee2e6;
+  }
+
+  .ant-table-thead .ant-table-cell {
+    display: none;
+  }
+  .ant-table-tbody .ant-table-cell {
+    display: block;
+  }
+  tbody {
+    padding: 8px;
+  }
+  .ant-table-row {
+    border: 1px solid #dee2e6;
+  }
+  .ant-table-tbody .ant-table-cell:before {
+    content: attr(data-heading);
+    display: inline;
+    width: 50%;
+    color: black;
+    font-size: 1rem;
+    /* text-transform: uppercase; */
+    letter-spacing: 0px;
+    padding-left: 8px;
+    padding-right: 8px;
+    /* margin-bottom: 50px; */
+  }
+
+  .zebra-highlight {
+    background: #ccc;
+  }
 }

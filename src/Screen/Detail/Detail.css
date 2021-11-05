@@ -1,20 +1,70 @@
-.col-detail-top {
-  background-color: white;
-  text-align: center;
+.content-detail {
+  margin: 16px 0;
 }
 
-.col-detail-content {
+.col-detail-top {
+  background: linear-gradient(
+    180.09deg,
+    rgba(114, 28, 166, 0.322934),
+    rgba(203, 162, 255, 0) 68.14%
+  );
   background-color: white;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 1em 1em 0 0;
+  padding: 16px 0;
+  text-align: center;
 }
 
 .col-detail-sup {
+  background-color: white;
+}
+
+.row-detail-data {
+  margin: 16px 0;
+}
+.col-detail-data {
   /* border: 1px solid red; */
   border-bottom: 1px solid #e4eaec;
 }
-.col-detail-title {
-  border-bottom: 1px solid #e4eaec;
-}
 
+.row-detail-Qrcode {
+  margin: 16px 0;
+}
 .col-detail-QRcode {
   text-align: center;
+}
+
+.row-detail-btn {
+  margin: 16px 0;
+}
+.col-detail-btn {
+  text-align: center;
+}
+.btn-detail {
+  width: 100%;
+}
+.btn-detail {
+  width: 100%;
+  border-color: #b983ff !important;
+  border-radius: 1em;
+}
+.text-btn-detail {
+  color: #b983ff;
+}
+
+.btn-detail:hover {
+  background-color: #b983ff;
+}
+.text-btn-detail:hover {
+  color: white;
+}
+
+.input-form-detailScane {
+  border-radius: 1em;
+  width: 100%;
+}
+.input-form-detailScane:focus,
+.input-form-detailScane:hover {
+  border-color: #b983ff;
+  box-shadow: 0 0 0 2px #b983ff2b;
 }

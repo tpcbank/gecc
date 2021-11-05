@@ -4,18 +4,18 @@ import Navbar from "./Component/Navbar/Navbar.component";
 import Login from "./Screen/Auth/Login.screen";
 
 function App() {
-  const [username, setUsername] = useState("");
+  const [umg_user, setumg_user] = useState("");
 
-  const callbackUsername = (username) => {
-    setUsername(username);
+  const callbackUsername = (umg_user) => {
+    setumg_user(umg_user);
   };
 
   return (
     <div className="App">
-      {username == "" || username == undefined ? (
+      {umg_user === "" || umg_user === undefined ? (
         <Login callbackUsername={callbackUsername} />
       ) : (
-        <Navbar />
+        <Navbar umg_user={umg_user} />
       )}
       {/* <Navbar /> */}
     </div>

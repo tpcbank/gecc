@@ -1,19 +1,75 @@
+.content-scan {
+  margin-top: 16px;
+}
+
+.col-scan-top {
+  background: linear-gradient(
+    180.09deg,
+    rgba(114, 28, 166, 0.322934),
+    rgba(203, 162, 255, 0) 68.14%
+  );
+  background-color: white;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 1em 1em 0 0;
+  padding: 16px 0px;
+  text-align: center;
+}
+.col-scan-sub {
+  background-color: white;
+}
+
+/* start col-scan-top */
+
+.text-scan-title {
+  margin: 0;
+}
+/* end col-scan-top */
+
+/* start col-scan-sub */
 .img-scan {
   width: 20%;
 }
-.Col-scan {
+/* start upload */
+.Col-scan-upload {
   text-align: center;
 }
-.btn-show-scan {
-  margin-top: 32px;
-  margin-bottom: 32px;
-  width: 100%;
+.photo-qrcode {
+  margin: 16px 0px;
 }
+.btn-upload,
+.btn-upload:hover,
+.btn-upload:focus {
+  background-color: green;
+  color: #fff;
+  border-radius: 1em;
+  border: green;
+}
+/* end uploand */
+
 .photo-qrcode {
   width: 100%;
 }
 .Col-scan {
   margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.row-btn-header {
+  margin: 16px 0;
+}
+/* start Button */
+.btn-show-scan {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+.btn-scan-switch,
+.btn-scan-switch:hover,
+.btn-scan-switch:focus {
+  background: #b983ff;
+  color: white;
+  border-radius: 1em;
+  border: #b983ff;
 }
 .btn-show-scanstart,
 .btn-show-scanstart:hover,
@@ -29,3 +85,37 @@
   color: #fff;
   border-radius: 1em;
 }
+
+.btn-headerstart,
+.btn-headerstop {
+  width: 100%;
+}
+
+.btn-headerstart,
+.btn-headerstart:hover,
+.btn-headerstart:focus {
+  background: #b983ff;
+  color: white;
+  border-radius: 1em;
+  border: white 1px solid;
+}
+.btn-headerstop,
+.btn-headerstop:hover,
+.btn-headerstop:focus {
+  background: white;
+  color: #b983ff;
+  border-radius: 1em;
+  border: #b983ff 1px solid;
+}
+
+/* end Button */
+
+.QRcodeScan {
+  width: 100%;
+}
+
+.row-data {
+  margin: 16px 0;
+}
+
+/* end col-scan-sub */

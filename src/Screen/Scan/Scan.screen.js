@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import QrReader from "react-qr-reader";
 import Camera from "./../../Img/camera-scan.gif";
 import "./Scan.css";
+import { Link } from "react-router-dom";
 
 export class Scan extends Component {
   constructor(props) {
@@ -16,7 +17,6 @@ export class Scan extends Component {
       file: false,
     };
   }
-  componentDidMount() {}
   handleScan = (data) => {
     if (data) {
       this.setState({
@@ -35,9 +35,14 @@ export class Scan extends Component {
     });
   };
 
-  onSwitch = () => {
+  onSwitchScan = () => {
     this.setState({
-      switchScan: !this.state.switchScan,
+      switchScan: false,
+    });
+  };
+  onSwitchUpload = () => {
+    this.setState({
+      switchScan: true,
     });
   };
 
@@ -50,37 +55,67 @@ export class Scan extends Component {
 
   render() {
     return (
-      <div>
+      <div className="content-scan">
         <Row>
           <Col
-            className="col-information-top"
+            className="col-scan-top"
             xs={{ span: 20, offset: 2 }}
             sm={{ span: 16, offset: 4 }}
             xl={{ span: 16, offset: 4 }}
           >
-            <h1>Scan</h1>
+            <h1 className="text-scan-title">Scan</h1>
           </Col>
         </Row>
         {/* Row Sub & form */}
         <Row>
           <Col
-            className="col-information-sub"
+            className="col-scan-sub"
             xs={{ span: 20, offset: 2 }}
             sm={{ span: 16, offset: 4 }}
             xl={{ span: 16, offset: 4 }}
           >
+            <Row className="row-btn-header">
+              <Col
+                xs={{ span: 20, offset: 2 }}
+                sm={{ span: 8, offset: 4 }}
+                xl={{ span: 8, offset: 4 }}
+              >
+                <Button
+                  onClick={this.onSwitchScan}
+                  className={
+                    "btn-header" + (this.state.switchScan ? "stop" : "start")
+                  }
+                >
+                  สแกน QRcode
+                </Button>
+              </Col>
+              <Col
+                xs={{ span: 20, offset: 2 }}
+                sm={{ span: 8, offset: 0 }}
+                xl={{ span: 8, offset: 0 }}
+              >
+                <Button
+                  onClick={this.onSwitchUpload}
+                  className={
+                    "btn-header" + (this.state.switchScan ? "start" : "stop")
+                  }
+                >
+                  อัพโหลดรูป QRcode
+                </Button>
+              </Col>
+            </Row>
             {this.state.switchScan ? (
               // Upload
               <Row>
                 <Col
-                  className="Col-scan"
+                  className="Col-scan-upload"
                   xs={{ span: 20, offset: 2 }}
                   sm={{ span: 16, offset: 4 }}
                   xl={{ span: 16, offset: 4 }}
                 >
                   <Row>
                     <Col
-                      className="Col-scan"
+                      className="Col-scan-upload"
                       xs={{ span: 20, offset: 2 }}
                       sm={{ span: 16, offset: 4 }}
                       xl={{ span: 12, offset: 6 }}
@@ -96,6 +131,7 @@ export class Scan extends Component {
                     </Col>
                   </Row>
                   <Button
+                    className="btn-upload"
                     icon={<UploadOutlined />}
                     onClick={this.openImageDialog}
                   >
@@ -118,14 +154,14 @@ export class Scan extends Component {
                         className="Col-scan"
                         xs={{ span: 20, offset: 2 }}
                         sm={{ span: 16, offset: 4 }}
-                        xl={{ span: 16, offset: 4 }}
+                        xl={{ span: 10, offset: 7 }}
                       >
                         <QrReader
                           delay={300}
                           onError={this.handleError}
                           onScan={this.handleScan}
                           className="QRcodeScan"
-                          facingMode="user"
+                          facingMode={"user"}
                         />
                       </Col>
                     </Row>
@@ -162,25 +198,21 @@ export class Scan extends Component {
               </Row>
             )}
 
-            <Row>
-              <Col
-                className="change-switch"
-                xs={{ span: 20, offset: 2 }}
-                sm={{ span: 16, offset: 4 }}
-                xl={{ span: 16, offset: 4 }}
-              >
-                <Button onClick={this.onSwitch}>
-                  {this.state.switchScan ? "แสกนด้วยกล้อง" : "เลือกรูป"}
-                </Button>
-              </Col>
-            </Row>
-            <Row>
+            {/* data */}
+            <Row className="row-data">
               <Col
                 xs={{ span: 20, offset: 2 }}
                 sm={{ span: 16, offset: 4 }}
                 xl={{ span: 16, offset: 4 }}
               >
-                <h1>data : {this.state.data}</h1>
+                <h1>
+                  data :{" "}
+                  <Link
+                    to={{ pathname: "/detailScan", state: this.state.data }}
+                  >
+                    <a>{this.state.data}</a>
+                  </Link>{" "}
+                </h1>
               </Col>
             </Row>
           </Col>

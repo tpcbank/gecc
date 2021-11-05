@@ -7,7 +7,6 @@ export class Edit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visibleModal: false,
       name: "",
       phone: "",
       priceIn: "",
@@ -20,7 +19,6 @@ export class Edit extends Component {
     };
   }
   render() {
-    console.log("edit", this.props.location.state);
     return (
       <div className="content-edit">
         {/* Row header */}
@@ -31,7 +29,7 @@ export class Edit extends Component {
             sm={{ span: 16, offset: 4 }}
             xl={{ span: 16, offset: 4 }}
           >
-            <h1>Edit</h1>
+            <h1 className="text-edit-top">แก้ไขข้อมูล</h1>
           </Col>
         </Row>
         {/* Row Sub & form */}
@@ -65,7 +63,7 @@ export class Edit extends Component {
                       sm={{ span: 22, offset: 1 }}
                       xl={{ span: 22, offset: 1 }}
                     >
-                      <h3>Name</h3>
+                      <h3>เลขทะเบียน</h3>
 
                       <Input
                         className="input-form-edit"
@@ -79,7 +77,7 @@ export class Edit extends Component {
                     </Col>
                   </Form.Item>
                   {/* phone */}
-                  <Form.Item
+                  {/* <Form.Item
                     name={"phone"}
                     rules={[
                       {
@@ -105,9 +103,9 @@ export class Edit extends Component {
                         }
                       />
                     </Col>
-                  </Form.Item>
+                  </Form.Item> */}
                   {/* priceIn */}
-                  <Form.Item
+                  {/* <Form.Item
                     name={"priceIn"}
                     // label="priceIn"
                     rules={[
@@ -134,10 +132,10 @@ export class Edit extends Component {
                         }
                       />
                     </Col>
-                  </Form.Item>
+                  </Form.Item> */}
                   {/* pricrOut */}
 
-                  <Form.Item
+                  {/* <Form.Item
                     name={"priceOut"}
                     rules={[
                       {
@@ -163,7 +161,7 @@ export class Edit extends Component {
                         }
                       />
                     </Col>
-                  </Form.Item>
+                  </Form.Item> */}
                   {/* photo */}
                   <Form.Item
                     name={"photo"}
@@ -198,7 +196,7 @@ export class Edit extends Component {
                             className="btn-upload-edit"
                             icon={<UploadOutlined />}
                           >
-                            Upload
+                            อัพโหลดรูป
                           </Button>
                         </Upload>
                       </Col>
@@ -218,7 +216,7 @@ export class Edit extends Component {
                         className="btn-form-edit"
                         onClick={this.sendData}
                       >
-                        Submit
+                        บันทึก
                       </Button>
                     </Col>
                   </Form.Item>

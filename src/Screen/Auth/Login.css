@@ -1,5 +1,10 @@
 .content-login {
   height: 100vh;
+  background: linear-gradient(
+    180.09deg,
+    rgba(114, 28, 166, 0.322934),
+    rgba(203, 162, 255, 0) 68.14%
+  );
   /* overflow: scroll; */
 }
 .row-login {
@@ -7,7 +12,8 @@
 .col-login {
   margin: 240px;
   text-align: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  box-shadow: 15px 15px 25px rgba(151, 167, 195, 0.5);
   background-color: white;
   border-radius: 1em;
 }
